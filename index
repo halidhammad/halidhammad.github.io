@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Muhammad Halid</title>
+    <!-- Memperbaiki link google fonts agar font Poppins termuat sempurna -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0b1528;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .brand-name {
+            color: #00a8ff;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: left;
+            margin-bottom: 50px;
+        }
+
+        .greeting {
+            color: #00a8ff;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .main-name {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .bio {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .btn-portfolio {
+            display: inline-block;
+            background-color: #00a8ff;
+            color: #0b1528;
+            padding: 12px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 60px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-portfolio:hover {
+            background-color: #008cd1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 168, 255, 0.4);
+        }
+
+        .avatar-circle {
+            width: 200px;
+            height: 200px;
+            background-color: #2575fc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(37, 117, 252, 0.3);
+            overflow: hidden; /* Memastikan foto tetap berbentuk lingkaran sempurna */
+            border: 4px solid #00a8ff; /* Bingkai biru cerah */
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .avatar-circle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 168, 255, 0.5);
+            border-color: #ffffff;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Menjaga rasio foto agar tidak gepeng */
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .avatar-circle:hover .avatar-img {
+            transform: scale(1.1); /* Efek zoom tipis saat foto didekati kursor */
+        }
+
+        .avatar-text {
+            font-size: 72px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 2px;
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="brand-name">Halid.</div>
+        <p class="greeting">Halo, Saya</p>
+        <h1 class="main-name">Muhammad Halid</h1>
+        <p class="bio">
+            Mahasiswa kreatif dan inovatif yang memiliki ketertarikan besar dalam dunia 
+            desain digital, teknologi, dan pengembangan media kreatif. 
+            Berpengalaman dalam membangun konsep visual modern serta aktif dalam 
+            berbagai proyek organisasi dan digital branding.
+        </p>
+        <a href="#" class="btn-portfolio">Lihat Portofolio</a>
+        
+        <div class="avatar-circle">
+            <!-- Teks "MH" sebagai fallback jika foto belum diganti atau gagal dimuat -->
+            <span class="avatar-text" id="avatarText">MH</span>
+            
+            <!-- 
+              GANTI URL DIBAWAH INI DENGAN FOTO ANDA SENDIRI:
+              - Anda bisa menggunakan link foto online atau file lokal (contoh: "foto-halid.jpg")
+              - Fungsi 'onload' otomatis menyembunyikan inisial "MH" jika gambar berhasil dimuat.
+              - Fungsi 'onerror' menyembunyikan elemen gambar jika gagal dimuat, sehingga inisial tetap terlihat aman.
+            -->
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=400&h=400" 
+                 alt="Muhammad Halid" 
+                 class="avatar-img" 
+                 id="avatarImg" 
+                 onload="document.getElementById('avatarText').style.display='none'" 
+                 onerror="this.style.display='none'; document.getElementById('avatarText').style.display='block'">
+        </div>
+    </div>
+
+</body>
+</html>
